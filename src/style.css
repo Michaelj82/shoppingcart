@@ -1,0 +1,39 @@
+html, body{
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+
+}
+
+#site{
+    display: grid;
+    grid-template-columns: minmax(100px, 1fr) 5fr 1fr;
+    grid-template-rows: minmax(75px, 1fr) 5fr 1fr;
+}
+
+
+
+#nav{
+    border: solid;
+
+    grid-area: span 1 / span 3;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    background-color: violet;
+
+}
+
+#nav > .links{
+    list-style-type: none;
+
+}
+
+
+#nav > .links > li{
+    float: right;
+    margin: 10px;
+}
