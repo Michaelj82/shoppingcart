@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import Cart from "../Cart";
+import Cart from "./Storecart";
 import uniqid from 'uniqid';
 
 function Product(props){
@@ -14,7 +14,8 @@ function Product(props){
     }
 
     function sendToCart(){
-        
+
+        props.parentCallback({name: props.name, price: props.price, quantity: count})
     }
 
 
@@ -23,9 +24,9 @@ function Product(props){
         <div className="product">
             <div>{props.name}</div>
             <div>{props.price}</div>
-            <form>
+            <form onSubmit={sendToCart}>
                 <input id ={id} type='number' min='1' onChange={getInput}></input>
-                <button type='submit'>Add to cart</button>
+                <button type='submit' onClick={(event) => event.preventDefault()}>Add to cart</button>
             </form>
             
 
