@@ -37,3 +37,15 @@ html, body{
     float: right;
     margin: 10px;
 }
+
+.product{
+    border: solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.product > form > input{
+    width: 75%;
+}
