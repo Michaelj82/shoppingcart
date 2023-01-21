@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import App from "./App";
@@ -7,12 +7,20 @@ import Storecart from "./Storecart";
 import Navbar from "./Navbar";
 
 const RouteSwitch = () => {
-    const [cartData, setCartData] = useState(['adsf'])
+    const [cartData, setCartData] = useState([])
     
     function toCart(item){
         console.log(item)
-        setCartData(cartData.push(item))
+        let newCartData = [...cartData]
+        newCartData.push(item)
+        setCartData(newCartData)
+        console.log(newCartData)
     }
+
+    useEffect(() =>{
+
+    }, [cartData])
+
 
     return(
         <BrowserRouter>

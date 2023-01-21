@@ -2,9 +2,9 @@ import React from "react";
 import Product from "./Product";
 
 function Store(props) {
-
+  
   function addToCart(item){
-    props.parentCallback(`${item}`)
+    props.parentCallback(item)
   }
 
   return (
