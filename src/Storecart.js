@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "./RouteSwitch";
 function Storecart(props) {
-
+  const {value} = useContext(Context)
   
 
   return (
     <div>
-      {props.data}
+      {value}
       </div>
   );
 }

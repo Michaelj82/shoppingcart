@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import Product from "./Product";
-
+import { Context } from "./RouteSwitch";
 function Store(props) {
-  
+  const {setValue} = useContext(Context)
+
   function addToCart(item){
-    props.parentCallback(item)
+    setValue(item)
   }
 
   return (
