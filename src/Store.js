@@ -7,8 +7,9 @@ function Store(props) {
   function addToCart(item){
     console.log(item)
     console.log(cartData)
-    setCartData(cartData.push(item))
-    console.log(cartData)
+    let newCartData = [...cartData]
+    newCartData.push(item)
+    setCartData(newCartData)
 
   }
 
