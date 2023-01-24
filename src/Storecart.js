@@ -1,12 +1,16 @@
-import React, { useContext } from "react";
-import { Context } from "./RouteSwitch";
+import React, { useContext, useEffect } from "react";
+import Context from "./userContext";
 function Storecart(props) {
-  const {value} = useContext(Context)
+  const {cartData} = useContext(Context)
   
+  useEffect(() => {
+    console.log(cartData)
+
+  })
 
   return (
     <div>
-      {value}
+      here:{cartData}
       </div>
   );
 }

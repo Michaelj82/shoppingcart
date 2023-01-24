@@ -1,11 +1,15 @@
 import React, { useContext } from "react";
 import Product from "./Product";
-import { Context } from "./RouteSwitch";
+import Context from "./userContext";
 function Store(props) {
-  const {setValue} = useContext(Context)
+  const {cartData, setCartData} = useContext(Context)
 
   function addToCart(item){
-    setValue(item)
+    console.log(item)
+    console.log(cartData)
+    setCartData(cartData.push(item))
+    console.log(cartData)
+
   }
 
   return (
