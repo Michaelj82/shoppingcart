@@ -15,8 +15,7 @@ function Product(props){
 
     function sendToCart(event){
         event.preventDefault()
-        props.parentCallback('hi')
-        // props.parentCallback({name: props.name, price: props.price, quantity: count})
+        props.parentCallback({name: props.name, price: props.price, quantity: count})
     }
 
 
@@ -26,7 +25,7 @@ function Product(props){
             <div>{props.name}</div>
             <div>{props.price}</div>
             <form onSubmit={sendToCart}>
-                <input id ={id} type='number' min='1' onChange={getInput}></input>
+                <input id ={id} type='number' min='1' onChange={getInput} placeholder={1}></input>
                 <button type='submit'>Add to cart</button>
             </form>
             
