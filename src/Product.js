@@ -25,7 +25,7 @@ function Product(props){
             <div>{props.name}</div>
             <div>{props.price}</div>
             <form onSubmit={sendToCart}>
-                <input id ={id} type='number' min='1' onChange={getInput} placeholder={1}></input>
+                <input id ={id} type='number' min='1' onChange={getInput} placeholder={1} required></input>
                 <button type='submit'>Add to cart</button>
             </form>
             
