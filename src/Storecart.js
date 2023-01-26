@@ -5,15 +5,25 @@ function Storecart(props){
   const {cartData, setCartData} = useContext(Context)
 
   function deleteItem(key){
-    let item = document.getElementById(key)
+    // let cart = document.getElementById('cart')
+    // let item = document.getElementById(key)
 
-    item.innerHTML = ''
+    // cart.removeChild(item)
 
+    let newData = [...cartData];
+    for (let i = 0; i < newData.length; i++){
+      if (newData[i].id == key){
+        newData.splice(i, 1)
+        setCartData(newData)
+      }
+    }
   }
 
-  // useEffect(() => {
-    
-  // }, [cartData])
+  useEffect(() => {
+    console.log('cart data')
+    console.log(cartData)
+
+  }, [cartData])
 
   return (
 
@@ -25,7 +35,10 @@ function Storecart(props){
             Price: {item.price}{'\n'}
             Quantity: {item.quantity}{'\n'}
             ------------{'\n'}
-            <button onClick={deleteItem(item.id)}>Delete</button>
+            <button onClick={function(){
+              deleteItem(item.id)
+              console.log(cartData)
+            }}>Delete</button>
           </div>
 
         ))}
