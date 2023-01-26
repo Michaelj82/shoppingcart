@@ -1,27 +1,43 @@
 import React, { useContext, useEffect } from "react";
 import Context from "./userContext";
-function Storecart(props) {
-  const {cartData} = useContext(Context)
-  
+import uniqid from "uniqid";
+function Storecart(props){
+  const {cartData, setCartData} = useContext(Context)
 
+  function deleteItem(key){
+    let item = document.getElementById(key)
 
-  useEffect(() => {
+    item.innerHTML = ''
+
+  }
+
+  // useEffect(() => {
     
-  }, [cartData])
+  // }, [cartData])
 
   return (
-    <div id="cart">
-      here:
-      {cartData.map(item => (
-        <div className="cartItem">
-          {item.name}{'\n'}
-          Price: {item.price}{'\n'}
-          Quantity: {item.quantity}{'\n'}
-          ------------
+
+    <div id="cartAlignment">
+      <div id="cart">
+        {cartData.map(item => (
+          <div key={uniqid()} id = {item.id} className="cartItem">
+            {item.name}{'\n'}
+            Price: {item.price}{'\n'}
+            Quantity: {item.quantity}{'\n'}
+            ------------{'\n'}
+            <button onClick={deleteItem(item.id)}>Delete</button>
+          </div>
+
+        ))}
         </div>
 
-      ))}
+      <div id="checkout">
+
       </div>
+
+    </div>
+
+
   );
 }
 

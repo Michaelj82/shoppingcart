@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import Product from "./Product";
 import Context from "./userContext";
+import uniqid from "uniqid"
 function Store(props) {
   const {cartData, setCartData} = useContext(Context)
 
@@ -13,10 +14,11 @@ function Store(props) {
 
   }
 
+
   return (
     <div>
       <div>Hello from store</div>
-      <Product name='Food' price='$2.00' parentCallback={addToCart}></Product>
+      <Product name='Food' price='2.00' parentCallback={addToCart} id={uniqid()}></Product>
 
     </div>
 
