@@ -1,14 +1,11 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Context from "./userContext";
 import uniqid from "uniqid";
 function Storecart(props){
   const {cartData, setCartData} = useContext(Context)
+  const {total, setTotal} = useState(0)
 
   function deleteItem(key){
-    // let cart = document.getElementById('cart')
-    // let item = document.getElementById(key)
-
-    // cart.removeChild(item)
 
     let newData = [...cartData];
     for (let i = 0; i < newData.length; i++){
@@ -46,6 +43,9 @@ function Storecart(props){
 
       <div id="checkout">
 
+            {/* {cartData.reduce((item, currentValue) => item.price + currentValue, total)} */}
+            total:{total}
+          <button id='checkoutButton'>Checkout</button>
       </div>
 
     </div>

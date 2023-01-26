@@ -6,7 +6,7 @@ const Navbar = () => {
 
     return(
         <div id="nav">
-                <Link to={'/'}>Odin Shop!</Link> 
+                <Link to={'/'}>Title</Link> 
             <ul className="links">
                 <li>
                    <Link to={'/cart'}>Cart</Link> 
