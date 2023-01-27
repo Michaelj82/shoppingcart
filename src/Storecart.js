@@ -16,6 +16,10 @@ function Storecart(props){
     }
   }
 
+  function finishOrder(){
+    
+  }
+
   useEffect(() => {
     let newCartData = [...cartData];
     let sum = 0
@@ -54,7 +58,7 @@ function Storecart(props){
       <div id="checkout">
 
             total:${total}
-          <button id='checkoutButton'>Checkout</button>
+          <button id='checkoutButton' onClick={finishOrder()}>Checkout</button>
       </div>
 
     </div>
