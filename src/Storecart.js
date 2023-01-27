@@ -3,7 +3,7 @@ import Context from "./userContext";
 import uniqid from "uniqid";
 function Storecart(props){
   const {cartData, setCartData} = useContext(Context)
-  const {total, setTotal} = useState(0)
+  const [total, setTotal] = useState(0)
 
   function deleteItem(key){
 
