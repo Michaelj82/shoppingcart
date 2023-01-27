@@ -17,8 +17,18 @@ function Storecart(props){
   }
 
   useEffect(() => {
-    console.log('cart data')
-    console.log(cartData)
+    let newCartData = [...cartData];
+    let sum = 0
+    for (let i = 0; i < newCartData.length; i++){
+      let item = newCartData[i];
+      let price = item['price'];
+      let quantity = item['quantity'];
+
+      let priceQuantity = price * quantity
+
+      sum += priceQuantity
+    }
+    setTotal(sum)
 
   }, [cartData])
 
@@ -29,7 +39,7 @@ function Storecart(props){
         {cartData.map(item => (
           <div key={uniqid()} id = {item.id} className="cartItem">
             {item.name}{'\n'}
-            Price: {item.price}{'\n'}
+            Price: ${item.price}{'\n'}
             Quantity: {item.quantity}{'\n'}
             ------------{'\n'}
             <button onClick={function(){
@@ -43,8 +53,7 @@ function Storecart(props){
 
       <div id="checkout">
 
-            {/* {cartData.reduce((item, currentValue) => item.price + currentValue, total)} */}
-            total:{total}
+            total:${total}
           <button id='checkoutButton'>Checkout</button>
       </div>
 
