@@ -109,3 +109,12 @@ html, body{
 
     overflow-y: scroll;
 }
+
+.popup{
+    position: fixed;
+    z-index: 1001;
+    background: aqua;
+    width: 50%;
+    height: 50%;
+    justify-self: center;
+}

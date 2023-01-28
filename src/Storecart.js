@@ -1,9 +1,15 @@
 import React, { useContext, useEffect, useState } from "react";
 import Context from "./userContext";
 import uniqid from "uniqid";
+import Popup from "./Popup";
 function Storecart(props){
   const {cartData, setCartData} = useContext(Context)
   const [total, setTotal] = useState(0)
+  const [isOpen, setisOpen] = useState(false)
+
+  function togglePopup(){
+    setisOpen(!isOpen)
+  }
 
   function deleteItem(key){
 
@@ -15,11 +21,6 @@ function Storecart(props){
       }
     }
   }
-
-  function finishOrder(){
-    
-  }
-
   useEffect(() => {
     let newCartData = [...cartData];
     let sum = 0
@@ -58,9 +59,16 @@ function Storecart(props){
       <div id="checkout">
 
             total:${total}
-          <button id='checkoutButton' onClick={finishOrder()}>Checkout</button>
+          <button id='checkoutButton' onClick={togglePopup}>Checkout</button>
       </div>
 
+      {isOpen && <Popup content={<>Bruh hi</>}
+      handleClose={togglePopup}>
+
+      </Popup>
+
+      }
+      
     </div>
 
 
