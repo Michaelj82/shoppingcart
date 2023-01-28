@@ -62,7 +62,8 @@ function Storecart(props){
           <button id='checkoutButton' onClick={togglePopup}>Checkout</button>
       </div>
 
-      {isOpen && <Popup content={<>Bruh hi</>}
+      {isOpen && <Popup content={<>Do you want to confirm your order of {total}?
+      <button type="submit">Yes</button></>}
       handleClose={togglePopup}>
 
       </Popup>
