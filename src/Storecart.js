@@ -7,7 +7,6 @@ function Storecart(props){
   const [total, setTotal] = useState(0)
   const [isOpen, setisOpen] = useState(false)
 
-<<<<<<< HEAD
   function cartItems(){
     let items = ''
     if (cartData.length > 0){
@@ -23,8 +22,6 @@ function Storecart(props){
     setisOpen(!isOpen)
     alert('bruh')
   }
-=======
->>>>>>> 6b6dd17004c159e456d5e49fd56868e65eeb7610
   function togglePopup(){
     setisOpen(!isOpen)
   }
@@ -80,11 +77,7 @@ function Storecart(props){
           <button id='checkoutButton' onClick={togglePopup}>Checkout</button>
       </div>
 
-<<<<<<< HEAD
       {isOpen && <Popup content={<form onSubmit={successfulPurchase}>{cartItems()}
-=======
-      {isOpen && <Popup content={<form onSubmit={togglePopup}>Do you want to confirm your order of {total}?
->>>>>>> 6b6dd17004c159e456d5e49fd56868e65eeb7610
       <button type="submit">Yes</button></form>}
       handleClose={togglePopup}>
 
