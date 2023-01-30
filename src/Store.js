@@ -21,6 +21,10 @@ function Store(props) {
       <Product name='Chicken' price='3.50' parentCallback={addToCart} id={uniqid()}></Product>
       <Product name='PS5' price='560.00' parentCallback={addToCart} id={uniqid()}></Product>
       <Product name='Table' price='25.00' parentCallback={addToCart} id={uniqid()}></Product>
+      <Product name='asf1' price='7.45' parentCallback={addToCart} id={uniqid()}></Product>
+      <Product name='asf2' price='54.00' parentCallback={addToCart} id={uniqid()}></Product>
+      <Product name='asf3' price='98.00' parentCallback={addToCart} id={uniqid()}></Product>
+      <Product name='asf4' price='56.00' parentCallback={addToCart} id={uniqid()}></Product>
 
     </div>
 

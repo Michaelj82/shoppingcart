@@ -10,17 +10,18 @@ function Storecart(props){
   function cartItems(){
     let items = ''
     if (cartData.length > 0){
-      items = <div>Do you want to confirm your order of {total}</div>
+      items = <div>Do you want to confirm your order of ${total}<button type="submit">Yes</button></div>
     }else{
-      items = <div>You dont have anything in your cart.</div>
+      items = <div>You do not have anything in your cart.</div>
     }
 
     return items
   }
 
   function successfulPurchase(){
+    setCartData([])
     setisOpen(!isOpen)
-    alert('bruh')
+    alert('Thank you for your purchase!')
   }
   function togglePopup(){
     setisOpen(!isOpen)
@@ -58,14 +59,26 @@ function Storecart(props){
       <div id="cart">
         {cartData.map(item => (
           <div key={uniqid()} id = {item.id} className="cartItem">
-            {item.name}{'\n'}
+            
+            <div className="cartItemProp">
+            {item.name}
+
+            </div>
+            <div className="cartItemProp">
             Price: ${item.price}{'\n'}
+
+            </div>
+            <div className="cartItemProp">
             Quantity: {item.quantity}{'\n'}
-            ------------{'\n'}
+
+            </div>
+            <div className="cartItemProp">
             <button onClick={function(){
               deleteItem(item.id)
               console.log(cartData)
             }}>Delete</button>
+            </div>
+
           </div>
 
         ))}
@@ -73,12 +86,12 @@ function Storecart(props){
 
       <div id="checkout">
 
-            total:${total}
+            Total:${total}
           <button id='checkoutButton' onClick={togglePopup}>Checkout</button>
       </div>
 
       {isOpen && <Popup content={<form onSubmit={successfulPurchase}>{cartItems()}
-      <button type="submit">Yes</button></form>}
+      </form>}
       handleClose={togglePopup}>
 
       </Popup>
