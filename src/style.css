@@ -1,0 +1,120 @@
+html, body{
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+
+}
+
+#site{
+    display: grid;
+    grid-template-columns: minmax(100px, 1fr) 5fr 1fr;
+    grid-template-rows: minmax(75px, 1fr) 5fr 1fr;
+}
+
+
+
+#nav{
+
+    grid-area: span 1 / span 3;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    background-color: violet;
+
+}
+
+#nav > .links{
+    list-style-type: none;
+
+}
+
+
+#nav > .links > li{
+    float: right;
+    margin: 10px;
+}
+
+.product{
+    border: solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.product > form > input{
+    width: 75%;
+}
+
+#cartAlignment{
+    grid-area: span 1 / span 3;
+
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+
+
+}
+
+#checkout{
+    grid-area: span 1 / span 1;
+    border: solid;
+    border-color: red;
+    height: 100%;
+    width: 100%;
+
+    margin: 0;
+}
+
+#cart{
+    grid-area: span 1 / span 1;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
+    border: solid;
+    border-color: green;
+    height: 100%;
+    width: 100%;
+
+    margin: 0;
+
+    overflow-y: scroll;
+}
+
+.cartItem{
+
+    border: solid;
+    border-color: brown;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#store{
+
+    width: 100vw;
+    height: 100%;
+    margin: 0;
+
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
+
+
+    overflow-y: scroll;
+}
+
+.popup{
+    position: fixed;
+    z-index: 1001;
+    background: aqua;
+    width: 50%;
+    height: 50%;
+    justify-self: center;
+}
